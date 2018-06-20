@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój kebab</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loklale.css' %}"/>
+</head>
+<body>
+<h1>Twoje kebaby</h1>
+    <form method="POST" class="wszytskie_lokale_view">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Sortuj</button>
+    </form>
+{% if lokale %}
+    <ul>
+        {% for lokal in lokale %}
+            <li>
+                <img src="{{ lokal.photo_ref }}" height="60" alt="img" class="img-responsive img-rounded">
+                <a href="/{{ lokal.id }}/">{{ lokal.name }}</a>
+                <a>{{ lokal.meat_avg }}</a>
+                <a>{{ lokal.sauce_avg }}</a>
+                <a>{{ lokal.batter_avg }}</a>
+                <a>{{ lokal.salds_avg }}</a>
+                <a>{{ lokal.overall_avg }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nie masz żadnych lokali</p>
+{% endif %}
+
+{#<button type="submit" class="save btn btn-default" onclick="={% url 'lokal_new' %}">Dodaj lokal</button>#}
+
+
+<a target="_blank" class="btn" href="{% url 'lokal_new' %}">Dodaj nowy lokal</a>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj kebaba</title>
+</head>
+<body>
+    <h1>Nowy kebab</h1>
+    <form method="POST" class="kebab_new">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Zapisz</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ lokal.name }}</title>
+</head>
+<body>
+{% if dania %}
+    <ul>
+        {% for danie in dania %}
+            <li><a href="/dania/{{ danie.id }}/">{{ danie.name }}</a>
+            <a>{{ danie.overall_rate }}</a>
+                </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% if kebaby %}
+    <ul>
+        {% for kebab in kebaby %}
+            <li><a href="/kebaby/{{ kebab.id }}/">{{ kebab.name }}</a>
+            <a>{{ kebab.avg_ref }}</a>
+                </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<a target="_blank" class="btn" href="{{ request.path }}{{ kebaby_lokale_id }}kebab/new">Dodaj nowego kebaba</a>
+<a target="_blank" class="btn" href="{{ request.path }}{{ kebaby_lokale_id }}danie/new">Dodaj nowe danie - nie bedące kebabem</a>
+
+
+</body>
+</html>
