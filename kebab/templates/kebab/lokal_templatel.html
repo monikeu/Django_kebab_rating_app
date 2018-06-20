@@ -6,27 +6,22 @@
     <title>{{ lokal.name }}</title>
 </head>
 <body>
-{% if dania %}
-    <ul>
-        {% for danie in dania %}
-            <li><a href="/dania/{{ danie.id }}/">{{ danie.name }}</a>
-            <a>{{ danie.overall_rate }}</a>
-                </li>
-        {% endfor %}
-    </ul>
-{% endif %}
 {% if kebaby %}
     <ul>
         {% for kebab in kebaby %}
-            <li><a href="/kebaby/{{ kebab.id }}/">{{ kebab.name }}</a>
-            <a>{{ kebab.avg_ref }}</a>
+            <li><a href="{{  request.path }}kebab/{{ kebab.id }}/">{{ kebab.name }}</a>
+            <a>{{ kebab.avg_meat }}</a>
+            <a>{{ kebab.avg_sauce }}</a>
+            <a>{{ kebab.avg_batter }}</a>
+            <a>{{ kebab.avg_salds }}</a>
+            <a>{{ kebab.avg_overall }}</a>
+            <a href="{{  request.path }}kebab/{{kebab.id}}/rate">Ocen kebaba</a>
                 </li>
         {% endfor %}
     </ul>
 {% endif %}
 
-<a target="_blank" class="btn" href="{{ request.path }}{{ kebaby_lokale_id }}kebab/new">Dodaj nowego kebaba</a>
-<a target="_blank" class="btn" href="{{ request.path }}{{ kebaby_lokale_id }}danie/new">Dodaj nowe danie - nie bedące kebabem</a>
+<a target="_blank" class="btn" href="{{ request.path }}kebab/new">Dodaj nowego kebaba</a>
 
 
 </body>

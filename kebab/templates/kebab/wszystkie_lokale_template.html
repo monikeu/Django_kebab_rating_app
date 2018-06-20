@@ -11,6 +11,7 @@
 </head>
 <body>
 <h1>Twoje kebaby</h1>
+<a href="/logout/">Wyloguj</a>
     <form method="POST" class="wszytskie_lokale_view">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Sortuj</button>
@@ -20,7 +21,7 @@
         {% for lokal in lokale %}
             <li>
                 <img src="{{ lokal.photo_ref }}" height="60" alt="img" class="img-responsive img-rounded">
-                <a href="/{{ lokal.id }}/">{{ lokal.name }}</a>
+                <a href="/kebaby_lokale/{{ lokal.id }}/">{{ lokal.name }}</a>
                 <a>{{ lokal.meat_avg }}</a>
                 <a>{{ lokal.sauce_avg }}</a>
                 <a>{{ lokal.batter_avg }}</a>

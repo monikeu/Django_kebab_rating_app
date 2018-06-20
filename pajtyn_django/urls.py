@@ -16,16 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import kebab.views as views
-from django.conf.urls import url
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('kebaby_lokale/<lokal_sort>/', views.wszytskie_lokale_view, name='kebaby_lokale'),
-    path('<int:kebaby_lokale_id>/', views.kebab_lokal_view, name='results'),
-    path('kebaby/<int:kebaby_dania_id>/', views.kebab_danie_view, name='results'),
+    path('start_page/', views.start_page, name='start_page'),
+    path('new_account/', views.user_form_view, name='register'),
+    path('logout/', views.logout_view, name='logout_view'),
+    path('admin/', admin.site.urls),
+    path('kebaby_lokale/sort/<lokal_sort>/', views.wszytskie_lokale_view, name='kebaby_lokale'),
+    path('kebaby_lokale/<int:kebaby_lokale_id>/', views.kebab_lokal_view, name='kebab_lokal_view'),
+    path('kebaby_lokale/<int:kebaby_lokale_id>/kebab/<int:kebaby_dania_id>/', views.kebab_danie_view, name='kebab_danie_view'),
+    path('kebaby_lokale/<int:kebaby_lokale_id>/kebab/<danie_id>/rate/', views.kebab_rate_view, name='kebab_rate_view'),
     path('kebaby_lokale/new/', views.lokal_new, name='lokal_new'),
-    path('<int:kebaby_lokale_id>/danie/new/', views.danie_new, name='danie_new'),
-    path('<int:kebaby_lokale_id>/kebab/new/', views.kebab_new, name='kebab_new'),
+    path('kebaby_lokale/<int:kebaby_lokale_id>/kebab/new/', views.kebab_new, name='kebab_new'),
 
 ]

@@ -5,7 +5,7 @@ from pajtyn_django import settings
 
 # Create your models here.
 RATE_CHOICES = (
-    (0, '1'),
+    (0, '0'),
     (1, '1'),
     (2, '2'),
     (3, '3'),
@@ -36,9 +36,6 @@ BATTER_CHOICES = (
 )
 
 
-
-
-
 class Kebaby_lokale(models.Model):
     name = models.CharField(max_length=200)
     city = models.CharField(max_length=200)
@@ -55,15 +52,15 @@ class Kebaby_dania(models.Model):
     photo_ref = models.CharField(max_length=1000)
 
     meat_type = models.CharField(max_length=20, choices=MEAT_CHOICES, default='Baranina')
-    meat = models.IntegerField(choices=RATE_CHOICES, default=0)
+    # meat = models.IntegerField(choices=RATE_CHOICES, default=0)
 
     sauce_type = models.CharField(max_length=20, choices=SAUCE_CHOICES, default='Lagodny')
-    sauce = models.IntegerField(choices=RATE_CHOICES, default=0)
+    # sauce = models.IntegerField(choices=RATE_CHOICES, default=0)
 
-    batter_type=models.CharField(max_length=20, choices=BATTER_CHOICES, default='Tortilla')
-    batter = models.IntegerField(choices=RATE_CHOICES, default=0)
+    batter_type = models.CharField(max_length=20, choices=BATTER_CHOICES, default='Tortilla')
+    # batter = models.IntegerField(choices=RATE_CHOICES, default=0)
 
-    salds = models.IntegerField(choices=RATE_CHOICES, default=0)
+    # salds = models.IntegerField(choices=RATE_CHOICES, default=0)
 
     local_id = models.ForeignKey(Kebaby_lokale, on_delete=models.CASCADE)
     avg_ref = models.FloatField(default=0)
@@ -72,9 +69,11 @@ class Kebaby_dania(models.Model):
         return (Kebaby_dania.sauce + Kebaby_dania.batter + Kebaby_dania.meat + Kebaby_dania.salds) / 4
 
 
-class Inne_dania(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.CharField(max_length=200)
-    overall_rate = models.IntegerField(choices=RATE_CHOICES, default=0)
-    photo_ref = models.CharField(max_length=1000)
-    local_id = models.ForeignKey(Kebaby_lokale, on_delete=models.CASCADE)
+class Kebaby_dania_oceny(models.Model):
+    danie_id = models.ForeignKey(Kebaby_dania, on_delete=models.CASCADE)
+
+    meat = models.IntegerField(choices=RATE_CHOICES, default=0)
+    sauce = models.IntegerField(choices=RATE_CHOICES, default=0)
+    batter = models.IntegerField(choices=RATE_CHOICES, default=0)
+    salds = models.IntegerField(choices=RATE_CHOICES, default=0)
+    raterId = models.IntegerField(default=0)

@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
+
 </head>
 <body>
+<h1>Oglądasz oceny {{ kebab.name }}</h1>
+<img src="{{ kebab.photo_ref }}" height="60" alt="img" class="img-responsive img-rounded">
+<a>Mięso {{ kebab.meat_type }} {{ avg_meat }} </a>
+<a>Sos {{ kebab.sauce_type }}{{ avg_sauce }} </a>
+<a>Sałatki {{ avg_salds }} </a>
+<a>Ciasto {{ kebab.batter_type }}{{ avg_batter }} </a>
+<a>{{ avg_overall }} </a>
+{% if rates %}
+    <a>Ocena</a>
+    <ul>
+        {% for rate in rates %}
+            <li>
+                <a>Mięso {{ rate.meat }} </a>
+                <a>Sos {{ rate.sauce }} </a>
+                <a>Sałatki {{ rate.salds }} </a>
+                <a>Ciato {{ rate.batter }} </a>
+                <a>Średnia {{ rate.overall }} </a>
+                <a>Wystawił {{ rater.username }} </a>
+                <a href="{{ request.path }}rate/{{ kebab.id }}"> Ocen kebaba</a>
 
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nie am żadnych ocen</p>
+{% endif %}
 </body>
 </html>

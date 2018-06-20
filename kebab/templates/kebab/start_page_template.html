@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój kebab</title>
+</head>
+<body>
+    <a href="/new_account/">Zarejestruj się</a>
+    <form method="POST" class="start_page">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Zaloguj się</button>
+</form>
+</body>
+</html>
