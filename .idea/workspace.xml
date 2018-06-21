@@ -4,21 +4,8 @@
     <list default="true" id="8150f7fe-9490-4463-a892-bf0b8de851e8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/kebab/static/css/kebab.css" afterPath="$PROJECT_DIR$/kebab/static/css/kebab.css" />
-      <change beforePath="$PROJECT_DIR$/kebab/static/css/kebab_new.css" afterPath="$PROJECT_DIR$/kebab/static/css/kebab_new.css" />
-      <change beforePath="$PROJECT_DIR$/kebab/static/css/lokal.css" afterPath="$PROJECT_DIR$/kebab/static/css/lokal.css" />
-      <change beforePath="$PROJECT_DIR$/kebab/static/css/register.css" afterPath="$PROJECT_DIR$/kebab/static/css/register.css" />
-      <change beforePath="$PROJECT_DIR$/kebab/static/css/start_page.css" afterPath="$PROJECT_DIR$/kebab/static/css/start_page.css" />
-      <change beforePath="$PROJECT_DIR$/kebab/static/css/wszystkie_lokale.css" afterPath="$PROJECT_DIR$/kebab/static/css/wszystkie_lokale.css" />
-      <change beforePath="$PROJECT_DIR$/kebab/templates/kebab/kebab_new_template.html" afterPath="$PROJECT_DIR$/kebab/templates/kebab/kebab_new_template.html" />
-      <change beforePath="$PROJECT_DIR$/kebab/templates/kebab/kebab_rate_template.html" afterPath="$PROJECT_DIR$/kebab/templates/kebab/kebab_rate_template.html" />
       <change beforePath="$PROJECT_DIR$/kebab/templates/kebab/kebab_view_template.html" afterPath="$PROJECT_DIR$/kebab/templates/kebab/kebab_view_template.html" />
-      <change beforePath="$PROJECT_DIR$/kebab/templates/kebab/lokal_new_template.html" afterPath="$PROJECT_DIR$/kebab/templates/kebab/lokal_new_template.html" />
-      <change beforePath="$PROJECT_DIR$/kebab/templates/kebab/lokal_templatel.html" afterPath="$PROJECT_DIR$/kebab/templates/kebab/lokal_templatel.html" />
-      <change beforePath="$PROJECT_DIR$/kebab/templates/kebab/register_template.html" afterPath="$PROJECT_DIR$/kebab/templates/kebab/register_template.html" />
-      <change beforePath="$PROJECT_DIR$/kebab/templates/kebab/start_page_template.html" afterPath="$PROJECT_DIR$/kebab/templates/kebab/start_page_template.html" />
       <change beforePath="$PROJECT_DIR$/kebab/templates/kebab/wszystkie_lokale_template.html" afterPath="$PROJECT_DIR$/kebab/templates/kebab/wszystkie_lokale_template.html" />
-      <change beforePath="$PROJECT_DIR$/kebab/views.py" afterPath="$PROJECT_DIR$/kebab/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -114,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kebab_new_template.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="kebab_new_template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kebab/templates/kebab/kebab_new_template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+            <state relative-caret-position="340">
+              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -134,7 +121,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kebab.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="kebab.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kebab/static/css/kebab.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="861">
@@ -148,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/kebab/templates/kebab/wszystkie_lokale_template.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="730">
-              <caret line="92" column="11" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+              <caret line="92" column="11" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -167,7 +154,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>kebab_v</find>
       <find>for</find>
       <find>labe</find>
       <find>row</find>
@@ -197,6 +183,7 @@
       <find>kebab</find>
       <find>p</find>
       <find>butt</find>
+      <find>ciastow</find>
     </findStrings>
     <replaceStrings>
       <replace>rate</replace>
@@ -472,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529576411414</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="aaaa">
+      <created>1529577413234</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1529577413234</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -615,7 +609,7 @@
         <state relative-caret-position="289">
           <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -643,7 +637,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="35" lean-forward="true" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -835,7 +829,7 @@
         <state relative-caret-position="-771">
           <caret line="219" column="19" lean-forward="true" selection-start-line="219" selection-start-column="19" selection-end-line="219" selection-end-column="19" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -885,18 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kebab/static/css/kebab.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="172" column="1" lean-forward="false" selection-start-line="172" selection-start-column="1" selection-end-line="172" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kebab/templates/kebab/wszystkie_lokale_template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="730">
-          <caret line="92" column="11" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <caret line="92" column="11" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -951,8 +937,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kebab/templates/kebab/kebab_new_template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="340">
+          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kebab/static/css/kebab.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="172" column="1" lean-forward="false" selection-start-line="172" selection-start-column="1" selection-end-line="172" selection-end-column="1" />
           <folding />
         </state>
       </provider>
