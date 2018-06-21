@@ -101,6 +101,14 @@ button {
     display: inline-block;
     font-size: 20px;
 }
+.p-sign{
+    margin: 10px;
+    color: #ffffff;
+    font-family: "Calibri Light";
+    font-size: 10px;
+    text-align: right;
+    font-weight: lighter;
+}
 
 .wrapper {
     margin: auto;

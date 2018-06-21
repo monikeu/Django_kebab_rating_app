@@ -41,6 +41,14 @@ a {
     font-size: 15px;
     text-align: center;
 }
+.p-sign{
+    margin: 10px;
+    color: #ffffff;
+    font-family: "Calibri Light";
+    font-size: 10px;
+    text-align: right;
+    font-weight: lighter;
+}
 
 p {
     color: #FFFFFF;

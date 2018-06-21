@@ -53,7 +53,14 @@ p {
     text-align: center;
     font-weight: bold;
 }
-
+.p-sign{
+    margin: 10px;
+    color: #ffffff;
+    font-family: "Calibri Light";
+    font-size: 10px;
+    text-align: right;
+    font-weight: lighter;
+}
 button {
     margin-top: 10px;
     font-family: "Calibri Light";

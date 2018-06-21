@@ -36,7 +36,7 @@ sorting = {
 def noneToInt(result):
     if result is None:
         return 0
-    return result
+    return round(result, 1)
 
 
 def index(request):
@@ -45,7 +45,6 @@ def index(request):
 
 @login_required
 def wszytskie_lokale_view(request, lokal_sort):
-    # lokale = sorting[lokal_sort]
     lokale = Kebaby_lokale.objects.all().values()
 
     for lokal in lokale:
@@ -53,25 +52,20 @@ def wszytskie_lokale_view(request, lokal_sort):
         lokal['salds_avg'] = noneToInt(sorting['salds'](lokal))
         lokal['batter_avg'] = noneToInt(sorting['batter'](lokal))
         lokal['sauce_avg'] = noneToInt(sorting['sauce'](lokal))
-        lokal['overall_avg'] = (lokal['meat_avg'] + lokal['salds_avg'] + lokal['batter_avg'] + lokal['sauce_avg']) / 4
+        lokal['overall_avg'] = round(
+            (lokal['meat_avg'] + lokal['salds_avg'] + lokal['batter_avg'] + lokal['sauce_avg']) / 4, 1)
 
     lokale = reversed(sorted(lokale, key=lambda k: k[lokal_sort + '_avg']))
 
     form = None
 
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = Sorting_form(request.POST)
-        # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
             form.label = lokal_sort
 
             return redirect('kebaby_lokale', lokal_sort=form.data['sorting'])
 
-        # if a GET (or any other method) we'll create a blank form
     else:
         form = Sorting_form()
         form.label = lokal_sort
@@ -116,11 +110,11 @@ def kebab_lokal_view(request, kebaby_lokale_id):
         avg_batter /= length
         avg_overall /= length
 
-        kebab['avg_meat'] = avg_meat
-        kebab['avg_sauce'] = avg_sauce
-        kebab['avg_salds'] = avg_salds
-        kebab['avg_batter'] = avg_batter
-        kebab['avg_overall'] = avg_overall
+        kebab['avg_meat'] = round(avg_meat, 1)
+        kebab['avg_sauce'] = round(avg_sauce, 1)
+        kebab['avg_salds'] = round(avg_salds, 1)
+        kebab['avg_batter'] = round(avg_batter, 1)
+        kebab['avg_overall'] = round(avg_overall, 1)
 
     context = {
         'lokal': lokal,
@@ -136,19 +130,13 @@ def lokal_new(request):
     template = loader.get_template('kebab/lokal_new_template.html')
 
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = Kebaby_lokaleForm(request.POST)
-        # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
             new_lokal = form.save(commit=False)
             new_lokal.rate = 0
             new_lokal.save()
             return redirect('kebaby_lokale', lokal_sort='overall')
 
-        # if a GET (or any other method) we'll create a blank form
     else:
         form = Kebaby_lokaleForm()
 
@@ -164,9 +152,7 @@ def kebab_new(request, kebaby_lokale_id):
     template = loader.get_template('kebab/kebab_new_template.html')
 
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = Kebaby_daniaForm(request.POST)
-        # check whether it's valid:
         if form.is_valid():
             new_danie = form.save(commit=False)
 
@@ -175,7 +161,6 @@ def kebab_new(request, kebaby_lokale_id):
             new_danie.save()
             return redirect('kebab_lokal_view', kebaby_lokale_id=kebaby_lokale_id)
 
-        # if a GET (or any other method) we'll create a blank form
     else:
         form = Kebaby_daniaForm()
 
@@ -186,28 +171,20 @@ def kebab_new(request, kebaby_lokale_id):
     return HttpResponse(template.render(context, request))
 
 
-# def kebab_rate(request, Kebaby_danie_id):
-
 @login_required
 def kebab_rate_view(request, kebaby_lokale_id, danie_id):
     template = loader.get_template('kebab/kebab_rate_template.html')
 
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = Kebaby_dania_ocenyForm(request.POST)
-        # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
             new_rate = form.save(commit=False)
             danie = Kebaby_dania.objects.get(pk=danie_id)
             new_rate.danie_id = danie
             new_rate.raterId = request.user.id
             new_rate.save()
-            return redirect('kebab_danie_view', kebaby_lokale_id=kebaby_lokale_id,kebaby_dania_id = danie_id)
+            return redirect('kebab_danie_view', kebaby_lokale_id=kebaby_lokale_id, kebaby_dania_id=danie_id)
 
-        # if a GET (or any other method) we'll create a blank form
     else:
         form = Kebaby_dania_ocenyForm()
 
@@ -245,11 +222,11 @@ def kebab_view(request, kebaby_lokale_id, kebaby_dania_id):
     avg_overall /= length
 
     context = {
-        'avg_meat': avg_meat,
-        'avg_sauce': avg_sauce,
-        'avg_salds': avg_salds,
-        'avg_batter': avg_batter,
-        'avg_overall': avg_overall,
+        'avg_meat': round(avg_meat, 1),
+        'avg_sauce': round(avg_sauce, 1),
+        'avg_salds': round(avg_salds, 1),
+        'avg_batter': round(avg_batter, 1),
+        'avg_overall': round(avg_overall, 1),
         'rates': rates,
         'rater': rater,
         'kebab': kebab

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dodaj lokal</title>
-        {% load staticfiles %}
+    {% load staticfiles %}
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -29,10 +29,13 @@
     <div class="form_group">
         <form method="POST" class="lokal_new">{% csrf_token %}
             {{ form.as_p }}
- <div class="wrapper">
+            <div class="wrapper">
                 <button type="submit" class="save btn btn-default">Zapisz</button>
-            </div>        </form>
+            </div>
+        </form>
     </div>
 </div>
+<p class="p-sign">Python project - Monika Darosz</p>
+
 </body>
 </html>

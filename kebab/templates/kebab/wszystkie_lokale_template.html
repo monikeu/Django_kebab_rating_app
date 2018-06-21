@@ -33,10 +33,11 @@
                 <div class="pos">
                     <form method="POST" class="wszytskie_lokale_view">{% csrf_token %}
                         {{ form.as_p }}
+                        <div class="wrapper">
+                            <button type="submit" class="save btn btn-default">Sortuj</button>
+                        </div>
                     </form>
-                    <div class="wrapper">
-                        <button type="submit" class="save btn btn-default">Sortuj</button>
-                    </div>
+
                 </div>
             </div>
             <div class="column column-1"></div>
@@ -89,5 +90,6 @@
 <div class="wrapper">
     <button class="btn btn-default"><a href="{% url 'lokal_new' %}">Dodaj nowy lokal</a></button>
 </div>
+<p class="p-sign">Python project - Monika Darosz</p>
 </body>
 </html>
