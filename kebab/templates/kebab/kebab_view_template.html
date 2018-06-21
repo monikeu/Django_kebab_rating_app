@@ -1,36 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+
     <meta charset="UTF-8">
     <title></title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/kebab.css' %}"/>
 </head>
 <body>
-<h1>Oglądasz oceny {{ kebab.name }}</h1>
-<img src="{{ kebab.photo_ref }}" height="60" alt="img" class="img-responsive img-rounded">
-<a>Mięso {{ kebab.meat_type }} {{ avg_meat }} </a>
-<a>Sos {{ kebab.sauce_type }}{{ avg_sauce }} </a>
-<a>Sałatki {{ avg_salds }} </a>
-<a>Ciasto {{ kebab.batter_type }}{{ avg_batter }} </a>
-<a>{{ avg_overall }} </a>
-{% if rates %}
-    <a>Ocena</a>
-    <ul>
-        {% for rate in rates %}
-            <li>
-                <a>Mięso {{ rate.meat }} </a>
-                <a>Sos {{ rate.sauce }} </a>
-                <a>Sałatki {{ rate.salds }} </a>
-                <a>Ciato {{ rate.batter }} </a>
-                <a>Średnia {{ rate.overall }} </a>
-                <a>Wystawił {{ rater.username }} </a>
-                <a href="{{ request.path }}rate/{{ kebab.id }}"> Ocen kebaba</a>
+<div class="page-header1">
 
-            </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>Nie am żadnych ocen</p>
-{% endif %}
+</div>
+<div class="page-header2">
+    <h1>Oglądasz danie </h1></div>
+
+<div class="row row-12">
+    <div class="column column-12">
+        <img src="{{ kebab.photo_ref }}" height="60" alt="img" class="img-responsive img-rounded">
+    </div>
+    <div class="column column-13">
+        <p class="d-name"> {{ kebab.name }}</p>
+
+        <div class="row row-123"><p class="p3">Składnik</p>
+            <p class="p3">Typ składnika</p>
+            <p class="p3">Ocena</p>
+        </div>
+
+        <div class="row row-123"><p class="p1">Mieso</p>
+            <p class="p2">{{ kebab.meat_type }}</p>
+            <p class="p3">{{ avg_meat }}</p>
+        </div>
+        <div class="row row-123"><p class="p1">Sos</p>
+            <p class="p2">{{ kebab.sauce_type }}</p>
+            <p class="p3">{{ avg_sauce }}</p>
+        </div>
+        <div class="row row-123"><p class="p1">Sałatki</p>
+            <p class="p2"></p>
+            <p class="p3">{{ avg_salds }}</p>
+        </div>
+        <div class="row row-123"><p class="p1">Ciastow</p>
+            <p class="p2">{{ kebab.batter_type }}</p>
+            <p class="p3">{{ avg_batter }}</p>
+        </div>
+        <div class="row row-123"><p class="p1">Średnia</p>
+            <p class="p2"></p>
+            <p class="p3">{{ avg_overall }}</p>
+        </div>
+        <div class="row row-123">
+            <div class="wrapper">
+                <button class="btn btn-default"><a href="{{ request.path }}rate/"> Ocen kebaba</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="page-header2"><h2>Oceny</h2></div>
+<div id="list-div">
+
+    {% if rates %}
+
+        <ul>
+            {% for rate in rates %}
+                <li>
+                    <div class="column column-2">
+                        <div class="row row-2">
+                            <div class="row my_row">
+
+                                <div class="column my_column"><p class="p-norm">Mieso</p>
+                                    <p class="p-norm">{{ rate.meat }}</p></div>
+                                <div class="column my_column"><p class="p-norm">Sos</p>
+                                    <p class="p-norm">{{ rate.sauce }}</p></div>
+                                <div class="column my_column"><p class="p-norm">Ciastow</p>
+                                    <p class="p-norm">{{ rate.batter }}</p></div>
+                                <div class="column my_column"><p class="p-norm">Sałatki</p>
+                                    <p class="p-norm">{{ rate.salds }}</p></div>
+                                <div class="column my_column"><p class="p-norm">Średnia</p>
+                                    <p class="p-norm">{{ lokal.overall_avg }}</p></div>
+                                <div class="column my_column"><p class="p-norm">Wystawil</p>
+                                    <p class="p-norm">{{ rater.username }}</p></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="p-norm">Nie am żadnych ocen</p>
+    {% endif %}
+</div>
 </body>
 </html>

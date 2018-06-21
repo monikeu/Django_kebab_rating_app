@@ -1,0 +1,123 @@
+
+img {
+    height: 100px;
+}
+
+divs {
+    background-color: #FF5C28;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+a {
+    color: #FFFFFF;
+    font-family: "Calibri Light";
+    font-size: 20px;
+    text-align: center;
+}
+
+.a-but {
+    color: #FF5C28;
+    font-family: "Calibri Light";
+    font-size: 30px;
+    text-align: center;
+}
+
+body {
+    background-image: url("papu.jpeg");
+}
+
+p {
+    color: #ff9400;
+    font-family: "Calibri Light";
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.pos {
+    position: absolute;
+    margin-right: 0px;
+}
+
+.row-1 {
+    margin-top: 30px;
+}
+
+.column-1 {
+    width: 20%;
+}
+
+.row-2 {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.column-2 {
+    width: 100%;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-family: "Calibri Light";
+    font-size: 70px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.cont-1 {
+    width: 20%;
+}
+
+.page-header1 {
+    margin-top: 100px;
+    padding: 20px 20px 20px 40px;
+}
+
+
+
+.page-header2 {
+    background-color: #ff9400;
+    margin-top: 10px;
+    padding: 20px 20px 20px 40px;
+}
+
+#list-div {
+    margin-top: 100px;
+}
+
+button {
+    font-family: "Calibri Light";
+    border: none;
+    background-color: #FF5C28;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.wrapper {
+    margin: auto;
+    text-align: center;
+}
+
+.my_row {
+    margin_top: 10px;
+    width: 50%;
+}
+
+.my_column {
+    margin-right: auto;
+    width: 60px;
+}
+
+img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}

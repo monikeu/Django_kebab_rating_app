@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}"/>
+</head>
+<body>
+<div class="page-header1">
+
+</div>
+<div class="page-header2">
+    <h1>Zarejestruj się</h1>
+</div>
+<div class="divs">
+    <form method="POST" class="user_form_view">{% csrf_token %}
+        <p>Nazwa użytkownika</p>{{ form.username }}
+        <p>E-mail</p>{{ form.email }}
+        <p>Hasło</p>{{ form.password }}
+        <div class="wrapper">
+            <button type="submit" class="save btn btn-default">Zarejestruj się</button>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

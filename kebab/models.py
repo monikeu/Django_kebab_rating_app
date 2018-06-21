@@ -50,18 +50,9 @@ class Kebaby_lokale(models.Model):
 class Kebaby_dania(models.Model):
     name = models.CharField(max_length=200)
     photo_ref = models.CharField(max_length=1000)
-
     meat_type = models.CharField(max_length=20, choices=MEAT_CHOICES, default='Baranina')
-    # meat = models.IntegerField(choices=RATE_CHOICES, default=0)
-
     sauce_type = models.CharField(max_length=20, choices=SAUCE_CHOICES, default='Lagodny')
-    # sauce = models.IntegerField(choices=RATE_CHOICES, default=0)
-
     batter_type = models.CharField(max_length=20, choices=BATTER_CHOICES, default='Tortilla')
-    # batter = models.IntegerField(choices=RATE_CHOICES, default=0)
-
-    # salds = models.IntegerField(choices=RATE_CHOICES, default=0)
-
     local_id = models.ForeignKey(Kebaby_lokale, on_delete=models.CASCADE)
     avg_ref = models.FloatField(default=0)
 

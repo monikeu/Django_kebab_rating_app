@@ -205,7 +205,7 @@ def kebab_rate_view(request, kebaby_lokale_id, danie_id):
             new_rate.danie_id = danie
             new_rate.raterId = request.user.id
             new_rate.save()
-            return redirect('kebab_lokal_view', kebaby_lokale_id=kebaby_lokale_id)
+            return redirect('kebab_danie_view', kebaby_lokale_id=kebaby_lokale_id,kebaby_dania_id = danie_id)
 
         # if a GET (or any other method) we'll create a blank form
     else:
@@ -218,7 +218,7 @@ def kebab_rate_view(request, kebaby_lokale_id, danie_id):
 
 
 @login_required
-def kebab_danie_view(request, kebaby_lokale_id, kebaby_dania_id):
+def kebab_view(request, kebaby_lokale_id, kebaby_dania_id):
     template = loader.get_template('kebab/kebab_view_template.html')
     rates = Kebaby_dania_oceny.objects.filter(danie_id=kebaby_dania_id).values()
     kebab = Kebaby_dania.objects.filter(id=kebaby_dania_id).values()[0]
@@ -258,8 +258,8 @@ def kebab_danie_view(request, kebaby_lokale_id, kebaby_dania_id):
     return HttpResponse(template.render(context, request))
 
 
-def user_form_view(request):
-    template = loader.get_template('kebab/login_template.html')
+def register_view(request):
+    template = loader.get_template('kebab/register_template.html')
     if request.method == 'POST':
         form = UserForm(request.POST)
 
@@ -308,7 +308,6 @@ def start_page(request):
         form = LoginForm(request.POST)
 
         if form.is_valid():
-            user = form.save(commit=False)
 
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']

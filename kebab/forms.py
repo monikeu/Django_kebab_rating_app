@@ -42,16 +42,19 @@ SORTING_CHOICES = (
 
 
 class Sorting_form(forms.Form):
-    sorting = forms.CharField(label="Sortuj", widget=forms.Select(choices=SORTING_CHOICES))
+    sorting = forms.CharField(label="", widget=forms.Select(choices=SORTING_CHOICES))
 
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(help_text=None)
 
     class Meta:
         model = User
         fields = ['username', 'email', 'password']
 
+
 class LoginForm(forms.Form):
+
     username = forms.CharField(label="Login")
-    password = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField( widget=forms.PasswordInput)

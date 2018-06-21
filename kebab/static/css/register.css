@@ -1,0 +1,63 @@
+body {
+    background-image: url("papu.jpeg");
+}
+
+h1 {
+    color: #FFFFFF;
+    font-family: "Calibri Light";
+    font-size: 70px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+
+.divs {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+        margin-top: 30px;
+
+    border-width: thick;
+    border-bottom-color: #FFFFFF;
+}
+
+.page-header1 {
+    margin-top: 100px;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header2 {
+    background-color: #ff9400;
+    margin-top: 10px;
+    padding: 20px 20px 20px 40px;
+}
+button {
+    margin-top: 20px;
+    font-family: "Calibri Light";
+    border: none;
+    background-color: #FF5C28;
+    text-align: center;
+    text-decoration: none;
+    color:#FFFFFF;
+    display: inline-block;
+    font-size: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+a {
+    color: #FFFFFF;
+    font-family: "Calibri Light";
+    font-size: 15px;
+    text-align: center;
+}
+
+p {
+    color: #FFFFFF;
+    font-family: "Calibri Light";
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
