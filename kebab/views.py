@@ -205,14 +205,14 @@ def kebab_view(request, kebaby_lokale_id, kebaby_dania_id):
     avg_salds = 0
     avg_batter = 0
     avg_overall = 0
-    rater = ''
+    rater = None
     for rate in rates:
         avg_meat += rate['meat']
         avg_sauce += rate['sauce']
         avg_salds += rate['salds']
         avg_batter += rate['batter']
         avg_overall += (avg_meat + avg_sauce + avg_salds + avg_batter) / 4
-        rater = User.objects.filter(id=rate['raterId']).values()[0]
+        rater = User.objects.get(id=rate['raterId'])
 
     length = len(rates) if len(rates) > 0 else 1
     avg_meat /= length
@@ -229,7 +229,7 @@ def kebab_view(request, kebaby_lokale_id, kebaby_dania_id):
         'avg_overall': round(avg_overall, 1),
         'rates': rates,
         'rater': rater,
-        'kebab': kebab
+        'kebab': kebab,
     }
 
     return HttpResponse(template.render(context, request))
