@@ -21,10 +21,7 @@ h1 {
     border-width: thick;
     border-bottom-color: #FFFFFF;
 }
-.page-header1 {
-    margin-top: 100px;
-    padding: 20px 20px 20px 40px;
-}
+
 
 .page-header2 {
     background-color: #ff9400;
@@ -33,6 +30,13 @@ h1 {
 }
 form {
     width: 100%;
+}
+.h1-s {
+    color: #FFFFFF;
+    font-family: "Calibri Light";
+    font-size: 70px;
+    font-weight: lighter;
+    text-align: center;
 }
 
 a {
@@ -66,6 +70,7 @@ button {
     margin-top: 10px;
     text-align: center;
 }
-.input_f{
-
+.page-header1 {
+    margin-top: 20px;
+    padding: 20px 20px 20px 40px;
 }

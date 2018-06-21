@@ -21,10 +21,7 @@ h1 {
     border-bottom-color: #FFFFFF;
 }
 
-.page-header1 {
-    margin-top: 100px;
-    padding: 20px 20px 20px 40px;
-}
+
 
 .page-header2 {
     background-color: #ff9400;
@@ -60,4 +57,8 @@ p {
     font-size: 30px;
     text-align: center;
     font-weight: bold;
+}
+.page-header1 {
+    margin-top: 20px;
+    padding: 20px 20px 20px 40px;
 }

@@ -10,9 +10,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/wszystkie_lokale.css' %}"/>
 </head>
 <body>
-<div class="page-header1">
 
+<div class="page-header1">
 </div>
+
+<div class="page-header2">
+    <h1><a class="h1-s" href="/kebaby_lokale/sort/overall/">Chodź na kebsa!</a></h1>
+</div>
+
+<div class="page-header1">
+</div>
+
 <div class="page-header2">
     <h1>Lokale</h1>
 </div>
@@ -54,11 +62,16 @@
                                                        href="/kebaby_lokale/{{ lokal.id }}/">{{ lokal.name }}</a>
                                 </div>
                                 <div class="row my_row">
-                                    <div class="column my_column"><p>Mieso</p> <p>{{ lokal.meat_avg }}</p></div>
-                                    <div class="column my_column"><p>Sos</p> <p>{{ lokal.sauce_avg }}</p></div>
-                                    <div class="column my_column"><p>Ciastow</p> <p>{{ lokal.batter_avg }}</p></div>
-                                    <div class="column my_column"><p>Sałatki</p> <p>{{ lokal.salds_avg }}</p></div>
-                                    <div class="column my_column"><p>Średnia</p> <p>{{ lokal.overall_avg }}</p></div>
+                                    <div class="column my_column"><p>Mieso</p>
+                                        <p>{{ lokal.meat_avg }}</p></div>
+                                    <div class="column my_column"><p>Sos</p>
+                                        <p>{{ lokal.sauce_avg }}</p></div>
+                                    <div class="column my_column"><p>Ciastow</p>
+                                        <p>{{ lokal.batter_avg }}</p></div>
+                                    <div class="column my_column"><p>Sałatki</p>
+                                        <p>{{ lokal.salds_avg }}</p></div>
+                                    <div class="column my_column"><p>Średnia</p>
+                                        <p>{{ lokal.overall_avg }}</p></div>
                                 </div>
                             </div>
                         </div>

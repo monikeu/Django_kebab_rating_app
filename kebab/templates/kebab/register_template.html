@@ -9,12 +9,19 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}"/>
 </head>
 <body>
-<div class="page-header1">
+  <div class="page-header1">
+    </div>
 
-</div>
-<div class="page-header2">
-    <h1>Zarejestruj się</h1>
-</div>
+    <div class="page-header2">
+        <h1>Chodź na kebsa!</h1>
+    </div>
+
+    <div class="page-header1">
+    </div>
+
+    <div class="page-header2">
+        <h1>Rejestracja</h1>
+    </div>
 <div class="divs">
     <form method="POST" class="user_form_view">{% csrf_token %}
         <p>Nazwa użytkownika</p>{{ form.username }}

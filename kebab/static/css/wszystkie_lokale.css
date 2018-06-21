@@ -74,12 +74,6 @@ h1 {
     width: 20%;
 }
 
-.page-header1 {
-    margin-top: 100px;
-    padding: 20px 20px 20px 40px;
-}
-
-
 
 .page-header2 {
     background-color: #ff9400;
@@ -101,6 +95,14 @@ button {
     font-size: 20px;
 }
 
+.h1-s {
+    color: #FFFFFF;
+    font-family: "Calibri Light";
+    font-size: 70px;
+    font-weight: lighter;
+    text-align: center;
+}
+
 .wrapper {
     margin: auto;
     text-align: center;
@@ -120,4 +122,8 @@ img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+}
+.page-header1 {
+    margin-top: 20px;
+    padding: 20px 20px 20px 40px;
 }
